@@ -1,0 +1,35 @@
+.header {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    list-style: none;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0px;
+    width: 100%;
+}
+
+.header-list {
+    display: flex;
+    list-style-type: none
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 8%;
+    cursor: pointer;
+}
+
+.item {
+    font-family: "Light";
+    padding: 20px;
+    cursor: pointer;
+}
+
+.icon-telegram {
+    height: 100%;
+    width: 70px;
+    content: url(/src/res/images/telegram.png);
+    margin-left: auto;
+}

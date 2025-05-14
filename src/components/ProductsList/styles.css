@@ -1,0 +1,33 @@
+.products-list {
+    display: grid;
+    list-style-type: none;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.products-list li {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.products-list li.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.show-more {
+    height: 55px;
+    width: 222px;
+    display: block; 
+    margin: 0 auto; 
+    text-align: center; 
+    color: white; 
+    border: none; 
+    border-radius: 55px;
+    font-size: 16px;
+    font-family: "Light";
+    background-color: black;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
