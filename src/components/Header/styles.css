@@ -7,6 +7,7 @@
     justify-content: space-between;
     padding: 0px;
     width: 100%;
+    background-color: black;
 }
 
 .header-list {
@@ -15,21 +16,30 @@
 }
 
 .logo {
-    height: 50px;
-    width: 50px;
+    margin-left: 8px;
+    height: 100px;
+    width: 100px;
     border-radius: 8%;
     cursor: pointer;
 }
 
 .item {
     font-family: "Light";
+    color: aliceblue;
     padding: 20px;
     cursor: pointer;
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.item:hover {
+    color: #21a1f1;
 }
 
 .icon-telegram {
-    height: 100%;
-    width: 70px;
-    content: url(/src/res/images/telegram.png);
+    height: 100px;
+    width: 100px;
+    content: url(/src/res/images/telegram-black.png);
     margin-left: auto;
+    margin-right: 12px;
 }

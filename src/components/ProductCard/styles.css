@@ -1,17 +1,23 @@
 .product-card {
     transition: transform 0.3s ease;
+    z-index: 3;
 }
 
 .product-card:hover {
     transform: scale(1.05);
 }
 
-.product-card p {
+.price {
+    margin-top: 8px;
+    font-family: "Light";
+}
+
+.name {
+    margin-top: 8px;
     font-family: "Light";
 }
 
 .icon {
-    border-radius: 8%;
     height: 150px;
     width: 100px;
     cursor: pointer;

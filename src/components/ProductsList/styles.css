@@ -2,6 +2,7 @@
     display: grid;
     list-style-type: none;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 30px;
 }
 
 .products-list li {

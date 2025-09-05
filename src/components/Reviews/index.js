@@ -18,22 +18,22 @@ const ReviewSlider = () => {
         <div style={{marginTop: "5%"}}>
             <h1 style={{fontFamily: "Light"}}>Отзывы</h1>
             <Swiper
-            spaceBetween={30}
+            spaceBetween={4}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
             breakpoints={{
                 640: {
-                    slidesPerView: 2,
+                    slidesPerView: 1,
                 },
                 768: {
-                    slidesPerView: 3,
+                    slidesPerView: 2,
                 },
                 1024: {
                     slidesPerView: 4, 
                 },
             }}
-            style={{ padding: '20px' }}>
+            style={{ padding: '8px' }}>
             {reviews.map(review => (
                 <SwiperSlide key={review.id}>
                     <ReviewCard review={review}/>

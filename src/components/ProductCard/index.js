@@ -1,29 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
 import { useNavigate } from 'react-router-dom';
-
-import ModalCardInfo from "../ModalCardInfo/ModalCardInfo.js";
 
 import './styles.css'
 
 const ProductCard = ({item}) => {
-    const [isOpen, setIsOpen] = useState(false);
 
-    const openModal = () => setIsOpen(true);
-
-    const closeModal = () => setIsOpen(false);
-    
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/product/${item.id}`); 
+        navigate(`/${(item.category << 16) | (item.id & 0xFFFF)}`);
     };
-
+   
     return (
         <div onClick={handleClick} className="product-card">
-            <img src={item.icon} alt={item.name} className="icon" onClick={openModal}/>
-            <p style={{fontFamily: "Light"}}>{item.name}</p>
-            <p>Price: {item.price}</p>
-            <ModalCardInfo isOpen={isOpen} onClose={closeModal} info={item}/>
+            <img src={item.image} alt={item.name} className="icon"/>
+            <p className="product-price">{item.price}₽</p>
+            <p className="product-name">{item.name}</p>
         </div>
     )
 }
