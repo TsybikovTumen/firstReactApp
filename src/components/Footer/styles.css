@@ -1,5 +1,25 @@
 .footer {
-    background-color: black;
-    height: 300px;
-    padding: 48px;
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+    color: whitesmoke;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 20px;
+    align-items: center;
+    justify-items: center; 
+    margin: 20px 0;
+}
+
+.partner-logo {
+    max-width: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.partner-logo:hover {
+    transform: scale(1.1);
 }

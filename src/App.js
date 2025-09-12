@@ -11,7 +11,6 @@ import ReviewSlider from './components/Reviews/index.js';
 import Footer from './components/Footer/index.js';
 import { ProductsContext } from './components/ProductsProvider/index.js';
 import ProductInfoPage from './pages/ProductInfoPage.js';
-import Partners from './components/Partners/index.js';
 
 function App() {
   const products = useContext(ProductsContext);
@@ -45,9 +44,6 @@ function App() {
       </section>
       <section id="reviews">
         <ReviewSlider />
-      </section>  
-      <section id="partners">
-        <Partners />
       </section>
       <div className="bottom">
         <Footer/>

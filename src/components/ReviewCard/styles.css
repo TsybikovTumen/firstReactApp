@@ -1,13 +1,13 @@
 .review-card {
     width: auto;
     max-width: 320px;
-    border: 2px solid #21a1f1;;
+    border: 2px solid black;;
     border-radius: 20px;
     padding: 16px;
 }
 
 .icon-telegram-review {
-    content: url(/src/res/images/telegram-blue.png);
+    content: url(/src/res/images/telegram-black.png);
     width: 50px;
     height: 50px;
     margin-left: auto;

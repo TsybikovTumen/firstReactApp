@@ -10,3 +10,9 @@
     flex: 1; 
     margin-top: 8px;
 }
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* чтобы был поверх контента */
+}

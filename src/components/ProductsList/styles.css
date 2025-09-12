@@ -30,5 +30,5 @@
     background-color: black;
     overflow: hidden;
     cursor: pointer;
-    transition: background-color 0.3s; /* Плавный переход цвета */
+    transition: background-color 0.3s;
 }
