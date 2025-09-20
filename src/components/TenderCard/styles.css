@@ -1,0 +1,28 @@
+.tender-card {
+  max-width: 400px;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Montserrat", sans-serif;
+}
+
+.tender-card__logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.tender-card__title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.tender-card__text {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

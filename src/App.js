@@ -7,10 +7,10 @@ import Categories from './components/Categories/index.js';
 import About from './components/About/index.js';
 import Delivery from './components/Delivery/index.js';
 import Garants from './components/Garants/index.js';
-import ReviewSlider from './components/Reviews/index.js';
 import Footer from './components/Footer/index.js';
 import { ProductsContext } from './components/ProductsProvider/index.js';
 import ProductInfoPage from './pages/ProductInfoPage.js';
+import Tenders from './components/Tenders/index.js';
 
 function App() {
   const products = useContext(ProductsContext);
@@ -41,6 +41,9 @@ function App() {
       </section>
       <section id="garranty">
         <Garants />
+      </section>
+      <section id="tenders">
+        <Tenders />
       </section>
       <div className="bottom">
         <Footer/>

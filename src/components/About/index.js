@@ -3,7 +3,7 @@ import './styles.css'
 const About = () => {
     return (
         <div className="styles.css">
-            <h1 style={{ fontFamily: "Montserrat" }}>О нас</h1>
+            <h1 style={{ fontFamily: "Montserrat" }}>О НАС</h1>
 
 <section class="about-intro" style={{ fontFamily: "Montserrat", marginBottom: "2rem" }}>
   <p>Ваш надежный <strong>IT-мост в Китай</strong>.</p>

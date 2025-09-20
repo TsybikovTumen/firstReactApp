@@ -3,7 +3,7 @@ const Delivery = () => {
     return (
 <div className="delivery" style={{ fontFamily: "Montserrat", margin: "2rem 0" }}>
   <h1 style={{ marginBottom: "1rem" }}>
-    Четкая и предсказуемая логистика из Китая в любую точку России
+    ЧЕТКАЯ И ПРЕДСКАЗУЕМАЯ ЛОГИСТИКА ИЗ КИТАЯ В ЛЮБУЮ ТОЧКУ РОССИИ
   </h1>
 
   <p style={{ marginBottom: "1.5rem" }}>

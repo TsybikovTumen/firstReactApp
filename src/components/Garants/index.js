@@ -3,7 +3,7 @@ const Garants = () => {
     return (
 <div className="guarantee" style={{ fontFamily: "Montserrat", margin: "2rem 0" }}>
   <h1 style={{ fontFamily: "Montserrat", marginBottom: "1rem" }}>
-    Гарантия качества и полной ответственности
+    ГАРАНТИЯ КАЧЕСТВА И ПОЛНОЙ ОТВЕТСТВЕННОСТИ
   </h1>
 
   <p style={{ marginBottom: "1.5rem" }}>
