@@ -42,9 +42,6 @@ function App() {
       <section id="garranty">
         <Garants />
       </section>
-      <section id="reviews">
-        <ReviewSlider />
-      </section>
       <div className="bottom">
         <Footer/>
       </div>

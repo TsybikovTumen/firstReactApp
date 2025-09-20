@@ -8,7 +8,7 @@ const Footer = () => {
 
     return (
         <footer className='footer'>
-            <p style={{fontFamily: "Light", color: "whitesmoke", opacity: "0.5", textAlign: "center"}}>Партнеры</p>
+            <p style={{fontFamily: "Montserrat", color: "whitesmoke", opacity: "0.5", textAlign: "center"}}>Партнеры</p>
 
             <div className="partners-grid">
                 {partners.map((logo, index) => (
@@ -16,7 +16,7 @@ const Footer = () => {
                 ))}
             </div>
 
-            <p style={{fontFamily: "Light", color: "whitesmoke", opacity: "0.5", textAlign: "center", marginTop: "20px"}}>
+            <p style={{fontFamily: "Montserrat", color: "whitesmoke", opacity: "0.5", textAlign: "center", marginTop: "20px"}}>
                 Copyright © 2025 ArcTrade. All rights reserved
             </p>
         </footer>

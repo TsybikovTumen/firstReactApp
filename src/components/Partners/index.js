@@ -12,7 +12,7 @@ const partners = [
 const Partners = () => {
     return (
         <div style={{marginTop: "5%"}}>
-            <h1 style={{fontFamily: "Light"}}>Наши партнеры</h1>
+            <h1 style={{fontFamily: "Montserrat"}}>Наши партнеры</h1>
             <ul className='partners-list'>
                  {partners?.map((item, index) => (
                     <li key={index}>

@@ -1,13 +1,45 @@
 import './styles.css'
 const Delivery = () => {
     return (
-        <div className='delivery'>
-            <h1 style={{fontFamily: "Light"}}>Доставка</h1>
-            <p style={{fontFamily: "Light"}}> 9:21:   The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
-  Line 12:21:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
-  Line 15:21:  The href attribute is required for an anchor to be keyboard accessible. Provide a valid, navigable address as the href value. If you cannot provide an href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
-  Line 18:21:  The href attribute is required for an anchor to be keyboard accessible. Pro</p>
-        </div>
+<div className="delivery" style={{ fontFamily: "Montserrat", margin: "2rem 0" }}>
+  <h1 style={{ marginBottom: "1rem" }}>
+    Четкая и предсказуемая логистика из Китая в любую точку России
+  </h1>
+
+  <p style={{ marginBottom: "1.5rem" }}>
+    Мы предлагаем полный спектр логистических услуг, чтобы вы получили свой груз точно в срок и в идеальном состоянии. Отлаженная цепочка — один из наших ключевых коньков.
+  </p>
+
+  <h3 style={{ marginBottom: "1rem" }}>Наши стандартные варианты доставки:</h3>
+
+  <ul style={{ marginLeft: "1.5rem", lineHeight: "1.6" }}>
+    <li style={{ marginBottom: "1.25rem" }}>
+      <strong>Авиадоставка</strong><br />
+      <em>Срок: 5-8 дней</em><br />
+      Идеально подходит для: срочных заказов, небольших партий и ценного оборудования.
+    </li>
+    <li style={{ marginBottom: "1.25rem" }}>
+      <strong>Автомобильная доставка (быстрая)</strong><br />
+      <em>Срок: 12-15 дней</em><br />
+      Идеально подходит для: средних и крупных партий, когда важен баланс между скоростью и стоимостью.
+    </li>
+    <li style={{ marginBottom: "1.25rem" }}>
+      <strong>Автомобильная доставка (эконом-класса)</strong><br />
+      <em>Срок: 18-23 дня</em><br />
+      Идеально подходит для: крупногабаритных партий и не самых срочных проектов.
+    </li>
+  </ul>
+
+  <h3 style={{ marginBottom: "1rem" }}>Индивидуальный подход</h3>
+  <p style={{ marginBottom: "1.25rem", marginLeft: "1.5rem", lineHeight: "1.6" }}>
+    Мы понимаем, что каждый проект уникален. Поэтому всегда готовы рассмотреть и предложить индивидуальный маршрут и способ доставки, исходя из ваших задач, бюджета и предпочтений.
+  </p>
+
+  <p style={{ marginLeft: "1.5rem", lineHeight: "1.6" }}>
+    Все грузы обязательно страхуются. Мы контролируем каждый этап пути и держим вас в курсе статуса заказа.
+  </p>
+</div>
+
     )
 }
 export default Delivery;

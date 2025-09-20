@@ -1,3 +1,41 @@
 .delivery {
     margin-top: 5%;
 }
+
+.delivery {
+  font-family: 'Light', sans-serif;
+  margin: 2rem 0;
+}
+
+.delivery h1 {
+  margin-bottom: 1rem;
+}
+
+.delivery p {
+  margin-bottom: 1.5rem;
+}
+
+.delivery h2 {
+  margin-bottom: 1rem;
+}
+
+.delivery ul {
+  margin-left: 1.5rem;
+  line-height: 1.6;
+  padding: 0; /* если нужно убрать отступы браузера */
+}
+
+.delivery ul li {
+  margin-bottom: 1.25rem;
+}
+
+.delivery ul li:last-child {
+  margin-bottom: 0;
+}
+
+.delivery p + h2,
+.delivery h2 + ul,
+.delivery ul + h2,
+.delivery h2 + p {
+  margin-top: 1.5rem;
+}

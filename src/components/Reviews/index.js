@@ -16,7 +16,7 @@ const reviews = [
 const ReviewSlider = () => {
     return (
         <div style={{marginTop: "5%"}}>
-            <h1 style={{fontFamily: "Light"}}>Отзывы</h1>
+            <h1 style={{fontFamily: "Montserrat"}}>Отзывы</h1>
             <Swiper
             spaceBetween={4}
             slidesPerView={1}
