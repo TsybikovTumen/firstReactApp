@@ -6,7 +6,7 @@ const Categories = ({categories}) => {
         <div className="categories">
             {categories.map((item, index) => (
             <div key={index} className="category">
-                <h1 style={{fontFamily: "Light"}}>{item.name}</h1>
+                <h1 style={{fontFamily: "Montserrat"}}>{item.name}</h1>
                 <ProductsList items={item.products}/>
             </div>
             ))}

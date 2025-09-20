@@ -1,50 +1,97 @@
 .header {
-    -webkit-box-align: center;
-    align-items: center;
     display: flex;
-    list-style: none;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    padding: 0px;
+    align-items: center;
+    justify-content: flex-start; /* логотип слева */
     width: 100%;
     background-color: black;
-}
-
-.header-list {
-    display: flex;
-    list-style-type: none
+    padding: 10px 20px;
+    box-sizing: border-box;
 }
 
 .logo {
-    margin-left: 8px;
     height: 100px;
-    width: 100px;
+    width: auto;
     border-radius: 8%;
     cursor: pointer;
 }
 
+/* Список пунктов меню */
+.header-list {
+    display: flex;
+    gap: 15px;           /* расстояние между пунктами */
+    list-style: none;
+    padding: 0;
+    margin-left: auto;    /* меню прижато к правому краю */
+    margin-right: 20px;   /* отступ справа от экрана */
+}
+
+/* Пункты меню */
 .item {
-    font-family: "Light";
+    font-family: "Light", sans-serif;
     color: aliceblue;
-    padding: 20px;
+    padding: 10px 5px;
     cursor: pointer;
     text-decoration: none; 
-    transition: color 0.3s; 
+    transition: color 0.3s;
+    font-size: 16px;
 }
 
 .item:hover {
     color: #21a1f1;
 }
 
-.icon-telegram {
-    height: 100px;
-    width: 100px;
-    content: url(/src/res/images/telegram-black.png);
-    margin-left: auto;
-    margin-right: 12px;
+.item.active {
+    color: #3498db;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    border-bottom: 2px solid #3498db;
 }
 
-.item.active {
-  color: #3498db;
-  text-shadow: 0 0 5px rgba(255,255,255,0.5);
+/* Иконка Telegram */
+.icon-telegram {
+    height: 60px;
+    width: auto;
+    content: url(/src/res/images/telegram-black.png);
+    cursor: pointer;
+}
+
+/* Адаптив для планшетов и телефонов */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start; /* прижать к левому краю на мобильных */
+        padding: 10px;
+    }
+
+    .header-list {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: 0;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .item {
+        font-size: 14px;
+        padding: 8px 5px;
+    }
+
+    .logo, .icon-telegram {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-list {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .item {
+        font-size: 12px;
+        padding: 6px 0;
+    }
+
+    .logo, .icon-telegram {
+        height: 30px;
+    }
 }

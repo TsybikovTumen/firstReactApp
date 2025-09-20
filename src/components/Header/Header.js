@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 const Header = () => {
   const navigate = useNavigate();
-  const [active, setActive] = useState('about'); // по умолчанию первая секция
+  const [active, setActive] = useState('');
 
   const handleClickLogo = () => {
     navigate(`/`);
