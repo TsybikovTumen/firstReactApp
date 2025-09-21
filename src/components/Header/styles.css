@@ -1,7 +1,7 @@
 .header {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* логотип слева */
+    justify-content: flex-start; 
     width: 100%;
     background-color: black;
     padding: 10px 20px;
@@ -15,17 +15,15 @@
     cursor: pointer;
 }
 
-/* Список пунктов меню */
 .header-list {
     display: flex;
-    gap: 15px;           /* расстояние между пунктами */
+    gap: 15px;           
     list-style: none;
     padding: 0;
-    margin-left: auto;    /* меню прижато к правому краю */
-    margin-right: 20px;   /* отступ справа от экрана */
+    margin-left: auto;    
+    margin-right: 20px;   
 }
 
-/* Пункты меню */
 .item {
     font-family: "Light", sans-serif;
     color: aliceblue;
@@ -43,10 +41,8 @@
 .item.active {
     color: #3498db;
     text-shadow: 0 0 5px rgba(255,255,255,0.5);
-    border-bottom: 2px solid #3498db;
 }
 
-/* Иконка Telegram */
 .icon-telegram {
     height: 60px;
     width: auto;
@@ -54,11 +50,10 @@
     cursor: pointer;
 }
 
-/* Адаптив для планшетов и телефонов */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
-        align-items: flex-start; /* прижать к левому краю на мобильных */
+        align-items: flex-start;
         padding: 10px;
     }
 

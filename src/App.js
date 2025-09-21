@@ -33,6 +33,9 @@ function App() {
             <Route path="/:id" element={<ProductInfoPage/>} />
           </Routes>
       </div>
+      <section id="tenders">
+        <Tenders />
+      </section>
       <section id="about">
         <About />
       </section>
@@ -41,9 +44,6 @@ function App() {
       </section>
       <section id="garranty">
         <Garants />
-      </section>
-      <section id="tenders">
-        <Tenders />
       </section>
       <div className="bottom">
         <Footer/>

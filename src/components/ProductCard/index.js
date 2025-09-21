@@ -14,8 +14,8 @@ const ProductCard = ({item}) => {
     return (
         <div onClick={handleClick} className="product-card">
             <img src={item.image} alt={item.name} className="icon"/>
-            <p className="product-price">{item.price}₽</p>
             <p className="product-name">{item.name}</p>
+            <p className="product-price">{item.price} ₽</p>
         </div>
     )
 }

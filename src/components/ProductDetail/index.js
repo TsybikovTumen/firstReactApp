@@ -15,7 +15,7 @@ const ProductDetail = ( {id} ) => {
             <div className="product-info">
                 <h1 style={{fontFamily : "Montserrat"}}>Название: {product.name}</h1>
                 <p className="product-description">О товаре: {product.description}</p>
-                <h2 className="product-price">{product.price}₽</h2>
+                <h2 className="product-price">{product.price} ₽</h2>
             </div>
         </div>
     );
