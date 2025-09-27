@@ -1,49 +1,43 @@
-/* --- Сетка товаров --- */
 .products-list {
     display: grid;
     list-style: none;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px; /* горизонтальные и вертикальные промежутки */
+    gap: 30px; 
     padding: 0;
     margin: 0;
 }
 
-/* --- Элементы списка --- */
 .products-list li {
     opacity: 0; 
     transform: translateY(20px); 
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* --- Появление элемента --- */
+
 .products-list li.visible {
     opacity: 1; 
     transform: translateY(0); 
 }
 
-/* --- Кнопка Show More --- */
+
 .show-more {
-    height: 55px;
-    width: 222px;
-    display: block; 
-    margin: 30px auto 0; /* отступ сверху и центрирование */
-    text-align: center; 
-    color: white; 
-    border: none; 
-    border-radius: 55px;
-    font-size: 16px;
+    background: none;          
+    border: none;              
+    color: #333;               
+    font-size: 16px;           
     font-family: "Montserrat", sans-serif;
-    background-color: black;
-    overflow: hidden;
     cursor: pointer;
-    transition: background-color 0.3s;
+    display: block;
+    margin: 30px auto 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+    text-align: center;
 }
 
 .show-more:hover {
-    background-color: #333;
+    transform: scale(1.1);   
+    color: #e53935;           
 }
 
-/* --- Адаптив для планшетов --- */
 @media (max-width: 1024px) {
     .products-list {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -56,7 +50,6 @@
     }
 }
 
-/* --- Адаптив для телефонов --- */
 @media (max-width: 768px) {
     .products-list {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -71,7 +64,7 @@
 
 @media (max-width: 480px) {
     .products-list {
-        grid-template-columns: 1fr; /* одна колонка на маленьких экранах */
+        grid-template-columns: 1fr;
         gap: 10px;
     }
 

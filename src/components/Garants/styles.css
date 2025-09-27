@@ -1,9 +1,8 @@
 .garants {
     margin-top: 5%;
-}
-.guarantee {
-  font-family: 'Montserrat', sans-serif;
-  margin: 2rem 0;
+    max-width: 1380px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .guarantee h1 {

@@ -1,10 +1,7 @@
 .delivery {
-    margin-top: 5%;
-}
-
-.delivery {
-  font-family: 'Light', sans-serif;
-  margin: 2rem 0;
+  max-width: 1380px;
+  margin: 0 auto;
+  font-family: "Montserrat";
 }
 
 .delivery h1 {
@@ -22,7 +19,7 @@
 .delivery ul {
   margin-left: 1.5rem;
   line-height: 1.6;
-  padding: 0; /* если нужно убрать отступы браузера */
+  padding: 0; 
 }
 
 .delivery ul li {

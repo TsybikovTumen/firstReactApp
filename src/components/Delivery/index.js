@@ -1,7 +1,7 @@
 import './styles.css'
 const Delivery = () => {
     return (
-<div className="delivery" style={{ fontFamily: "Montserrat", margin: "2rem 0" }}>
+<div className="delivery">
   <h1 style={{ marginBottom: "1rem" }}>
     ЧЕТКАЯ И ПРЕДСКАЗУЕМАЯ ЛОГИСТИКА ИЗ КИТАЯ В ЛЮБУЮ ТОЧКУ РОССИИ
   </h1>

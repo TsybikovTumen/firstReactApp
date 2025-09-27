@@ -2,6 +2,7 @@ import React from "react";
 import ProductsList from "../ProductsList/index.js";
 import './styles.css'
 const Categories = ({categories}) => {
+    console.log(categories)
     return (
         <div className="categories">
             {categories.map((item, index) => (

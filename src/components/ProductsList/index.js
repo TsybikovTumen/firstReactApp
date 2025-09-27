@@ -1,14 +1,11 @@
-import React from "react";
-
+import React, { useEffect } from "react";
 import ProductCard from "../ProductCard/index.js";
-
 import { useProductList } from "./useProductList";
 import './styles.css';
-import { useEffect } from "react";
 
-const ProductsList = ({items}) => {
-    const {isVisible, products, showMore} = useProductList(items={items}); 
-    
+const ProductsList = ({ items }) => {
+    const { isVisible, products, showMore } = useProductList({ items }); 
+
     useEffect(() => {
         const listItems = document.querySelectorAll('.products-list li');
         listItems.forEach((item, index) => {
@@ -17,6 +14,8 @@ const ProductsList = ({items}) => {
             }, index * 25);
         });
     }, [products]);
+
+    const remainingCount = items.length - products.length;
 
     return (
         <div>
@@ -27,7 +26,12 @@ const ProductsList = ({items}) => {
                     </li>
                 ))}  
             </ul>
-            {isVisible && <button onClick={showMore} className="show-more">Показать еще</button>}
+
+            {isVisible && 
+                <button onClick={showMore} className="show-more">
+                    Показать ещё ({remainingCount})
+                </button>
+            }
         </div>
     );
 }

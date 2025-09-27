@@ -20,31 +20,27 @@ function App() {
       <div className="top">
         <Header/>
       </div>
-      <div className='main-content'>
+        <div className='app-body'>
+          <div className='main-content'>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Categories categories={products} />
-                </>
-              }
-            />
-            <Route path="/:id" element={<ProductInfoPage/>} />
+            <Route path="/" 
+              element={products ? <Categories categories={products} /> : <p>Загрузка...</p>}/>
+            <Route path="/product/:id" element={<ProductInfoPage/>} />
           </Routes>
-      </div>
-      <section id="tenders">
-        <Tenders />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="delivery">
-        <Delivery />
-      </section>
-      <section id="garranty">
-        <Garants />
-      </section>
+          </div>
+          <section id="tenders">
+            <Tenders />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+          <section id="delivery">
+            <Delivery />
+          </section>
+          <section id="garranty">
+            <Garants />
+          </section>
+        </div>
       <div className="bottom">
         <Footer/>
       </div>

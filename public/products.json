@@ -3,7 +3,7 @@
       "id": 1,
       "name": "Накопители данных",
       "products": [
-        { "image": "images/products/1.jpg", "id": 1, "category": 1, "name": "7011552.2 Siba",  "description": "Смартфон", "price": "1075.00" },
+        { "image": "images/products/1.jpg", "id": 1, "category": 1, "name": "7011552.2 Siba",  "description": "...", "price": "1075.00" },
         { "image": "", "id": 2, "category": 1, "name": "Astron RS-12A-BB ",  "description": "Смартфон", "price": 300 },
         { "image": "", "id": 3, "category": 1, "name": "Тест",  "description": "Смартфон", "price": 300 },
         { "image": "", "id": 4, "category": 1, "name": "Тест",  "description": "Смартфон", "price": 300 },

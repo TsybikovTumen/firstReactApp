@@ -1,3 +1,8 @@
+.tenders-container {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
 .tenders-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

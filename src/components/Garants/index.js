@@ -1,7 +1,7 @@
 import './styles.css'
 const Garants = () => {
     return (
-<div className="guarantee" style={{ fontFamily: "Montserrat", margin: "2rem 0" }}>
+<div className="garants">
   <h1 style={{ fontFamily: "Montserrat", marginBottom: "1rem" }}>
     ГАРАНТИЯ КАЧЕСТВА И ПОЛНОЙ ОТВЕТСТВЕННОСТИ
   </h1>

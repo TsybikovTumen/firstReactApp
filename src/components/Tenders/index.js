@@ -12,7 +12,7 @@ const Tenders = () => {
 ];
 
   return (
-    <div>
+    <div className="tenders-container">
       <h1>СРЕДИ ВЫПОЛНЕННЫХ ТЕНДЕРОВ</h1>
       <div className="tenders-grid">
         {tenders.map((tender, index) => (
