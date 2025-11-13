@@ -1,6 +1,7 @@
 .product-card {
     transition: transform 0.3s ease;
     z-index: 3;
+
 }
 
 .product-card:hover {

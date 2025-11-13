@@ -7,10 +7,10 @@ import { ProductsProvider } from './components/ProductsProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ProductsProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ProductsProvider>
         <App />
-      </BrowserRouter>
-    </ProductsProvider>
+      </ProductsProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );

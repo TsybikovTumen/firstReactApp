@@ -1,27 +1,19 @@
-import React, { useEffect } from "react";
-import ProductCard from "../ProductCard/index.js";
+import ProductCard from "../ProductCard";
 import { useProductList } from "./useProductList";
 import './styles.css';
+const ProductsList = ({ items = []}) => {
 
-const ProductsList = ({ items }) => {
-    const { isVisible, products, showMore } = useProductList({ items }); 
-
-    useEffect(() => {
-        const listItems = document.querySelectorAll('.products-list li');
-        listItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.classList.add('visible');
-            }, index * 25);
-        });
-    }, [products]);
-
-    const remainingCount = items.length - products.length;
-
+    const { isVisible, products, showMore, remainingCount } = useProductList({ 
+      items, 
+      initialCount: 20, 
+      step: 5 
+    });
+  
     return (
         <div>
             <ul className="products-list">
-                {products?.map((item, index) => (
-                    <li key={index}>
+                {products.map((item, index) => (
+                    <li key={item.id || index}>
                         <ProductCard item={item}/>
                     </li>
                 ))}  

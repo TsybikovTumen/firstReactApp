@@ -13,7 +13,7 @@ export const ProductsProvider = ({ children }) => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setProducts(data);
+        setProducts(data.products);
       } catch (error) {
         console.error('Ошибка при загрузке данных:', error);
       }

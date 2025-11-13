@@ -11,7 +11,7 @@ const Footer = () => {
         <a href="tel:+8618810907172">+86 188 1090 7172</a>
       </div>
       <p className="footer-copyright">
-        Copyright © 2025 ArcTrade. All rights reserved
+        Copyright © 2025 ArkTrade. All rights reserved
       </p>
     </footer>
   );

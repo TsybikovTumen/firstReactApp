@@ -28,8 +28,12 @@
 }
 
 .product-description {
-    margin: 15px 0;
+    margin: 20px 0;
     font-family: "Montserrat";
+    font-size: 18px; /* ← увеличили размер текста */
+    line-height: 1.6; /* ← улучшили межстрочный интервал */
+    color: #444; /* ← приятный серый цвет */
+    text-align: left; /* ← выравнивание по левому краю */
 }
 
 .product-price {

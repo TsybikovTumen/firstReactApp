@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
+import imagePlaceHolder from '../../res/images/product-placeholder.png'
+
 import './styles.css';
 
 function ProductImage({ product }) {
   const [open, setOpen] = useState(false);
-
   const modalContent = (
     <div className="modal" onClick={() => setOpen(false)}>
       <button className="modal-close" onClick={(e) => { 
@@ -21,14 +22,14 @@ function ProductImage({ product }) {
   return (
     <>
       <img
-        src={product.image}
+        src={product.image || imagePlaceHolder}
         alt={product.name}
         className="product-image"
         onClick={() => setOpen(true)}
         style={{ cursor: "pointer" }}
       />
 
-      {open && createPortal(modalContent, document.getElementById("modal-root"))}
+      {open && product.image && createPortal(modalContent, document.getElementById("modal-root"))}
     </>
   );
 }
