@@ -1,11 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styles.css';
 
 const ScrollToTop = ({ 
-    showAfter = 300,        // через сколько px показывать
-    smoothScroll = true,    // плавная прокрутка
-    color = "#2c5aa0",      // цвет кнопки
-    hoverColor = "#1e3a8a"  // цвет при наведении
+    showAfter = 300,
+    smoothScroll = true
 }) => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -14,7 +12,7 @@ const ScrollToTop = ({
             setIsVisible(window.pageYOffset > showAfter);
         };
 
-        window.addEventListener('scroll', toggleVisibility);
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
         return () => window.removeEventListener('scroll', toggleVisibility);
     }, [showAfter]);
 
@@ -31,13 +29,24 @@ const ScrollToTop = ({
                 <button 
                     onClick={scrollToTop}
                     className="scroll-to-top"
-                    style={{
-                        '--button-color': color,
-                        '--button-hover-color': hoverColor
-                    }}
                     aria-label="Вернуться наверх"
+                    title="Наверх"
                 >
-                    ↑
+                    <svg 
+                        className="scroll-icon" 
+                        viewBox="0 0 24 24" 
+                        fill="none" 
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path 
+                            d="M12 19V5M12 5L5 12M12 5L19 12" 
+                            stroke="currentColor" 
+                            strokeWidth="2.5" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round"
+                        />
+                    </svg>
+                    <span className="scroll-pulse"></span>
                 </button>
             )}
         </>

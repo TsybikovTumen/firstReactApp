@@ -2,47 +2,97 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     border: none;
     border-radius: 50%;
-    background: #2c5aa0;
+    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
     color: white;
-    font-size: 20px;
-    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.3);
-    transition: all 0.3s ease;
-    z-index: 1000;
+    box-shadow: 0 4px 16px rgba(44, 90, 160, 0.4),
+                0 0 0 0 rgba(44, 90, 160, 0.7);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: visible;
+    animation: slideInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, box-shadow;
 }
 
-.scroll-to-top:hover {
-    background: #1e3a8a;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(44, 90, 160, 0.4);
+.scroll-to-top::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2c5aa0, #1e3a8a);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
-.scroll-to-top:active {
-    transform: translateY(0);
+.scroll-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+    z-index: 1;
+    position: relative;
 }
 
-/* Анимация появления */
-.scroll-to-top {
-    animation: fadeIn 0.3s ease;
+.scroll-pulse {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: rgba(44, 90, 160, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    z-index: -1;
 }
 
-@keyframes fadeIn {
+@keyframes slideInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(20px) scale(0.8);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 24px rgba(44, 90, 160, 0.5),
+                0 0 0 4px rgba(44, 90, 160, 0.2);
+    background: linear-gradient(135deg, #1e3a8a 0%, #2c5aa0 100%);
+}
+
+.scroll-to-top:hover .scroll-icon {
+    transform: translateY(-2px);
+}
+
+.scroll-to-top:hover::before {
+    opacity: 0.3;
+}
+
+.scroll-to-top:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 4px 12px rgba(44, 90, 160, 0.4);
+}
+
+.scroll-to-top:active .scroll-icon {
+    transform: translateY(0);
 }
 
 /* Адаптивность */
@@ -50,35 +100,73 @@
     .scroll-to-top {
         bottom: 20px;
         right: 20px;
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .scroll-icon {
+        width: 22px;
+        height: 22px;
     }
 }
 
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    background: var(--button-color, #2c5aa0);
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+    }
+
+    .scroll-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .scroll-pulse {
+        inset: -3px;
+    }
 }
 
-.scroll-to-top:hover {
-    background: var(--button-hover-color, #1e3a8a);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+/* Улучшенная доступность */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-to-top {
+        animation: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .scroll-pulse {
+        animation: none;
+        display: none;
+    }
+
+    .scroll-to-top:hover {
+        transform: none;
+    }
+
+    .scroll-to-top:hover .scroll-icon {
+        transform: none;
+    }
+}
+
+/* Эффект при скролле вниз */
+.scroll-to-top.scrolling-down {
+    transform: translateY(10px);
+    opacity: 0.8;
+}
+
+/* Дополнительный эффект свечения */
+.scroll-to-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.scroll-to-top:hover::after {
+    opacity: 1;
 }

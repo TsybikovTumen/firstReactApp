@@ -1,14 +1,18 @@
 .review-card {
     width: auto;
     max-width: 320px;
-    border: 2px solid black;;
+    border: 2px solid black;
     border-radius: 20px;
     padding: 16px;
 }
 
 .icon-telegram-review {
-    content: url(/src/res/images/telegram-black.png);
+    display: inline-block;
+    margin-left: auto;
+}
+
+.icon-telegram-review img {
     width: 50px;
     height: 50px;
-    margin-left: auto;
+    display: block;
 }

@@ -10,7 +10,7 @@ export const useProductDetail = ({ id }) => {
         if (!products || products.length === 0) return;
         const foundProduct = products.find(item => item.id === id)
         setProduct(foundProduct);
-    }, [products]);
+    }, [products, id]);
 
     return { product };
 }

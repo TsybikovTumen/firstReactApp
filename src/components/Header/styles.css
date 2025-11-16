@@ -1,130 +1,426 @@
 .header {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background-color: black;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    position: relative;
-    justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, backdrop-filter;
+}
+
+.header.scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(26, 26, 26, 0.85) 100%);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  gap: 24px;
+}
+
+/* Логотип */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.logo-wrapper:active {
+  transform: scale(0.98);
 }
 
 .logo {
-    height: 100px;
-    width: auto;
-    border-radius: 8%;
-    cursor: pointer;
+  height: 80px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.logo-wrapper:hover .logo {
+  filter: brightness(1.1);
+}
+
+/* Контакты (десктоп) */
+.header-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Мобильные контакты скрыты на десктопе */
+.mobile-contacts {
+  display: none;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.contact-link:hover {
+  color: #21a1f1;
+  background: rgba(33, 161, 241, 0.1);
+  transform: translateX(4px);
+}
+
+.contact-icon {
+  font-size: 16px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.contact-link:hover .contact-icon {
+  opacity: 1;
+}
+
+/* Навигация */
+.header-nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 .header-list {
-    display: flex;
-    gap: 15px;           
-    list-style: none;
-    margin-left: auto;       
-    align-items: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.item {
-    font-family: "Light", sans-serif;
-    color: aliceblue;
-    padding: 10px 5px;
-    cursor: pointer;
-    text-decoration: none; 
-    transition: color 0.3s;
-    font-size: 16px;
-    align-items: center;
+.nav-item {
+  font-family: "Montserrat", sans-serif;
+  color: #e0e0e0;
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
 }
 
-.item:hover {
-    color: #21a1f1;
+.nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #21a1f1, #1e88e5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%);
 }
 
-.item.active {
-    color: #21a1f1;
+.nav-item:hover {
+  color: #21a1f1;
+  background: rgba(33, 161, 241, 0.1);
 }
 
-.icon-telegram {
+.nav-item:hover::before {
+  width: 80%;
+}
+
+.nav-item.active {
+  color: #21a1f1;
+  background: rgba(33, 161, 241, 0.15);
+}
+
+.nav-item.active::before {
+  width: 80%;
+}
+
+/* Telegram */
+.telegram-item {
+  margin-left: 8px;
+}
+
+.telegram-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.telegram-link:hover {
+  background: rgba(33, 161, 241, 0.2);
+  transform: scale(1.1);
+}
+
+.telegram-icon {
+  height: 32px;
+  width: auto;
+  display: block;
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
+}
+
+.telegram-link:hover .telegram-icon {
+  filter: brightness(1.2);
+}
+
+/* Бургер меню */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 201;
+  transition: all 0.3s ease;
+}
+
+.burger-line {
+  width: 100%;
+  height: 3px;
+  background: #e0e0e0;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.burger:hover .burger-line {
+  background: #21a1f1;
+}
+
+.burger.active .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.burger.active .burger-line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.burger.active .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 199;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Мобильное меню */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 10px 16px;
+    gap: 16px;
+  }
+
+  .logo {
     height: 60px;
-    width: auto;
-    content: url(/src/res/images/telegram-black.png);
-    cursor: pointer;
+  }
+
+  .header-contacts {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .header-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 24px 24px;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 200;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+  }
+
+  .header-list.open {
+    transform: translateX(0);
+  }
+
+  .header-list li {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+
+  .nav-item::before {
+    display: none;
+  }
+
+  .nav-item.active {
+    background: rgba(33, 161, 241, 0.2);
+    border-left: 3px solid #21a1f1;
+  }
+
+  .mobile-contacts {
+    display: flex !important;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .contact-link-mobile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .contact-link-mobile:hover {
+    color: #21a1f1;
+    background: rgba(33, 161, 241, 0.15);
+    transform: translateX(4px);
+  }
+
+  .contact-link-mobile .contact-icon {
+    font-size: 18px;
+  }
+
+  .telegram-item {
+    margin-left: 0;
+    margin-top: 16px;
+    width: 100%;
+  }
+
+  .telegram-link {
+    width: 100%;
+    padding: 12px;
+    justify-content: center;
+  }
+
+  .telegram-icon {
+    height: 36px;
+  }
 }
 
 @media (max-width: 480px) {
-    .header-list {
-        flex-direction: column;
-        gap: 5px;
-    }
+  .header-container {
+    padding: 8px 12px;
+  }
 
-    .item {
-        font-size: 12px;
-        padding: 6px 0;
-    }
+  .logo {
+    height: 50px;
+  }
 
-    .logo, .icon-telegram {
-        height: 30px;
-    }
+  .header-list {
+    width: 260px;
+    padding: 70px 20px 20px;
+  }
+
+  .nav-item {
+    font-size: 15px;
+    padding: 12px 14px;
+  }
 }
 
-
-.burger {
-    display: none;
-    color: white;
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
+/* Плавная анимация появления элементов меню */
 @media (max-width: 768px) {
-    .burger {
-        display: block;
-        right: 0;
-    }
-    
-    .header-list {
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100vh;
-        width: 250px;
-        background-color: #000; 
-        flex-direction: column;
-        padding: 40px 20px; 
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 200;
-    }
+  .header-list.open li {
+    animation: slideInRight 0.4s ease forwards;
+    opacity: 0;
+  }
 
-    .header-list.open {
-        transform: translateX(0);
-    }
+  .header-list.open li:nth-child(1) { animation-delay: 0.05s; }
+  .header-list.open li:nth-child(2) { animation-delay: 0.1s; }
+  .header-list.open li:nth-child(3) { animation-delay: 0.15s; }
+  .header-list.open li:nth-child(4) { animation-delay: 0.2s; }
+  .header-list.open li:nth-child(5) { animation-delay: 0.25s; }
+  .header-list.open li:nth-child(6) { animation-delay: 0.3s; }
 
-    .header-list li {
-        margin-bottom: 20px;
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
     }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
 
-    .header-list .item {
-        color: #fff;         
-        font-size: 18px;
-    }
-
-    .header-list .item.active {
-        color: #21a1f1;      
-        text-shadow: none;
-    }
-
-    .header-list .icon-telegram {
-        display: block;
-        margin-top: 20px;
-        height: 40px;
-        width: auto;
-    }
-
-    .overlay {
-        position: fixed;
-        inset: 0;
-        background: rgba(0,0,0,0.5);
-        z-index: 150;
-    }
+/* Улучшенная доступность */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

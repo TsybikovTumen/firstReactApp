@@ -15,21 +15,21 @@ function ProductImage({ product }) {
         ✕
       </button>
 
-      <img src={product.image} alt={product.name} className="modal-image" />
+      <img src={product.img || product.image} alt={product.product_name || product.name} className="modal-image" />
     </div>
   );
 
   return (
     <>
       <img
-        src={product.image || imagePlaceHolder}
-        alt={product.name}
+        src={product.img || product.image || imagePlaceHolder}
+        alt={product.product_name || product.name || 'Товар'}
         className="product-image"
         onClick={() => setOpen(true)}
         style={{ cursor: "pointer" }}
       />
 
-      {open && product.image && createPortal(modalContent, document.getElementById("modal-root"))}
+      {open && (product.img || product.image) && createPortal(modalContent, document.getElementById("modal-root"))}
     </>
   );
 }

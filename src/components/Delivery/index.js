@@ -1,45 +1,83 @@
-import './styles.css'
+import './styles.css';
+
 const Delivery = () => {
-    return (
-<div className="delivery">
-  <h1 style={{ marginBottom: "1rem" }}>
-    ЧЕТКАЯ И ПРЕДСКАЗУЕМАЯ ЛОГИСТИКА ИЗ КИТАЯ В ЛЮБУЮ ТОЧКУ РОССИИ
-  </h1>
+  return (
+    <div className="delivery-container" id="delivery">
+      <div className="delivery-header">
+        <h1 className="delivery-title">ЧЕТКАЯ И ПРЕДСКАЗУЕМАЯ ЛОГИСТИКА ИЗ КИТАЯ В ЛЮБУЮ ТОЧКУ РОССИИ</h1>
+        <div className="delivery-divider"></div>
+      </div>
 
-  <p style={{ marginBottom: "1.5rem" }}>
-    Мы предлагаем полный спектр логистических услуг, чтобы вы получили свой груз точно в срок и в идеальном состоянии. Отлаженная цепочка — один из наших ключевых коньков.
-  </p>
+      <p className="delivery-intro">
+        Мы предлагаем полный спектр логистических услуг, чтобы вы получили свой груз точно в срок и в идеальном состоянии. 
+        Отлаженная цепочка — один из наших ключевых коньков.
+      </p>
 
-  <h3 style={{ marginBottom: "1rem" }}>Наши стандартные варианты доставки:</h3>
+      <section className="delivery-options">
+        <h3 className="section-title">
+          Наши стандартные варианты доставки
+        </h3>
 
-  <ul style={{ marginLeft: "1.5rem", lineHeight: "1.6" }}>
-    <li style={{ marginBottom: "1.25rem" }}>
-      <strong>Авиадоставка</strong><br />
-      <em>Срок: 5-8 дней</em><br />
-      Идеально подходит для: срочных заказов, небольших партий и ценного оборудования.
-    </li>
-    <li style={{ marginBottom: "1.25rem" }}>
-      <strong>Автомобильная доставка (быстрая)</strong><br />
-      <em>Срок: 12-15 дней</em><br />
-      Идеально подходит для: средних и крупных партий, когда важен баланс между скоростью и стоимостью.
-    </li>
-    <li style={{ marginBottom: "1.25rem" }}>
-      <strong>Автомобильная доставка (эконом-класса)</strong><br />
-      <em>Срок: 18-23 дня</em><br />
-      Идеально подходит для: крупногабаритных партий и не самых срочных проектов.
-    </li>
-  </ul>
+        <div className="options-grid">
+          <div className="option-card">
+            <div className="option-header">
+              <h4 className="option-title">Авиадоставка</h4>
+            </div>
+            <div className="option-details">
+              <div className="option-time">
+                <span className="time-label">Срок:</span>
+                <span className="time-value">5-8 дней</span>
+              </div>
+              <p className="option-description">
+                Идеально подходит для: срочных заказов, небольших партий и ценного оборудования.
+              </p>
+            </div>
+          </div>
 
-  <h3 style={{ marginBottom: "1rem" }}>Индивидуальный подход</h3>
-  <p style={{ marginBottom: "1.25rem", marginLeft: "1.5rem", lineHeight: "1.6" }}>
-    Мы понимаем, что каждый проект уникален. Поэтому всегда готовы рассмотреть и предложить индивидуальный маршрут и способ доставки, исходя из ваших задач, бюджета и предпочтений.
-  </p>
+          <div className="option-card">
+            <div className="option-header">
+              <h4 className="option-title">Автомобильная доставка (быстрая)</h4>
+            </div>
+            <div className="option-details">
+              <div className="option-time">
+                <span className="time-label">Срок:</span>
+                <span className="time-value">12-15 дней</span>
+              </div>
+              <p className="option-description">
+                Идеально подходит для: средних и крупных партий, когда важен баланс между скоростью и стоимостью.
+              </p>
+            </div>
+          </div>
 
-  <p style={{ marginLeft: "1.5rem", lineHeight: "1.6" }}>
-    Все грузы обязательно страхуются. Мы контролируем каждый этап пути и держим вас в курсе статуса заказа.
-  </p>
-</div>
+          <div className="option-card">
+            <div className="option-header">
+              <h4 className="option-title">Автомобильная доставка (эконом-класса)</h4>
+            </div>
+            <div className="option-details">
+              <div className="option-time">
+                <span className="time-label">Срок:</span>
+                <span className="time-value">18-23 дня</span>
+              </div>
+              <p className="option-description">
+                Идеально подходит для: крупногабаритных партий и не самых срочных проектов.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    )
-}
+      <section className="delivery-custom">
+        <h3>Индивидуальный подход</h3>
+        <p>
+          Мы понимаем, что каждый проект уникален. Поэтому всегда готовы рассмотреть и предложить индивидуальный маршрут 
+          и способ доставки, исходя из ваших задач, бюджета и предпочтений.
+        </p>
+        <p className="delivery-note">
+          Все грузы обязательно страхуются. Мы контролируем каждый этап пути и держим вас в курсе статуса заказа.
+        </p>
+      </section>
+    </div>
+  );
+};
+
 export default Delivery;

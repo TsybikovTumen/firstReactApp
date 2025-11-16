@@ -12,8 +12,11 @@ const Tenders = () => {
 ];
 
   return (
-    <div className="tenders-container">
-      <h1>СРЕДИ ВЫПОЛНЕННЫХ ТЕНДЕРОВ</h1>
+    <div className="tenders-container" id="tenders">
+      <div className="tenders-header">
+        <h1 className="tenders-title">СРЕДИ ВЫПОЛНЕННЫХ ТЕНДЕРОВ</h1>
+        <div className="tenders-divider"></div>
+      </div>
       <div className="tenders-grid">
         {tenders.map((tender, index) => (
           <TenderCard tender={tender} key={index} />
