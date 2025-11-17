@@ -47,6 +47,10 @@ const ProductCard = ({ item, currentProductId }) => {
               : item.summary}
           </p>
         )}
+        
+        <p className="product-card-disclaimer">
+          Изображения на сайте приведены в качестве ознакомительной информации и могут отличаться от конечного продукта.
+        </p>
       </div>
     </div>
   );

@@ -5,10 +5,10 @@ import { useMainContent } from './useMainContent';
 import './styles.css';
 
 const CATEGORIES_CONFIG = [
-  { id: 'all', name: 'Все товары' },
-  { id: 'storage', name: 'Накопители данных' },
-  { id: 'switches', name: 'Коммутаторы' },
-  { id: 'servers', name: 'Сервера' },
+  { id: 'all', name: '📦 Все товары' },
+  { id: 'storage', name: '💾 Накопители данных' },
+  { id: 'switches', name: '🔌 Коммутаторы' },
+  { id: 'servers', name: '🖥️ Сервера' },
 ];
 
 const MainContent = ({ products = [] }) => {

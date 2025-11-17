@@ -105,6 +105,17 @@
   flex: 1;
 }
 
+.product-card-disclaimer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  color: #adb5bd;
+  line-height: 1.4;
+  margin: 8px 0 0 0;
+  padding-top: 8px;
+  border-top: 1px solid #e9ecef;
+  font-style: italic;
+}
+
 
 /* Адаптивность */
 @media (max-width: 768px) {
@@ -125,6 +136,12 @@
     font-size: 13px;
     -webkit-line-clamp: 2;
   }
+
+  .product-card-disclaimer {
+    font-size: 9px;
+    margin-top: 6px;
+    padding-top: 6px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -144,6 +161,12 @@
 
   .product-card-summary {
     font-size: 12px;
+  }
+
+  .product-card-disclaimer {
+    font-size: 8px;
+    margin-top: 4px;
+    padding-top: 4px;
   }
 }
 

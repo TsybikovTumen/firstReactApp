@@ -11,7 +11,7 @@ const SameProducts = ({id}) => {
     
     return (
         <div className="same-products">
-            <h2 style={{fontFamily: "Montserrat"}}>Похожие товары</h2>
+            <h2>Похожие товары</h2>
             <ul className="same-products-list">
                 {products.map((item, index) => (
                     <li key={item.id || index}>

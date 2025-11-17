@@ -74,7 +74,7 @@
 .product-detail-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  gap: 60px;
   align-items: start;
 }
 
@@ -82,6 +82,23 @@
 .product-image-section {
   position: sticky;
   top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.product-image-disclaimer {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: #adb5bd;
+  line-height: 1.5;
+  margin: 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #dee2e6;
+  font-style: italic;
+  text-align: center;
 }
 
 /* Секция с информацией */
@@ -227,12 +244,12 @@
 
 /* Блок с ценой по запросу */
 .product-price-section {
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .price-request-card {
   background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
-  padding: 32px;
+  padding: 28px;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 4px 16px rgba(44, 90, 160, 0.3);
@@ -286,7 +303,7 @@
 @media (max-width: 1024px) {
   .product-detail-content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
   .product-image-section {
@@ -338,6 +355,11 @@
   .contact-button {
     width: 100%;
   }
+
+  .product-image-disclaimer {
+    font-size: 10px;
+    padding: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -361,6 +383,11 @@
 
   .price-request-title {
     font-size: 20px;
+  }
+
+  .product-image-disclaimer {
+    font-size: 9px;
+    padding: 8px;
   }
 
 }

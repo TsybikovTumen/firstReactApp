@@ -36,6 +36,28 @@ const ProductDetail = ({ id }) => {
       <div className="product-detail-content">
         <div className="product-image-section">
           <ProductImage product={product} />
+          
+          <p className="product-image-disclaimer">
+            Изображения на сайте приведены в качестве ознакомительной информации и могут отличаться от конечного продукта.
+          </p>
+          
+          {/* Блок с ценой по запросу */}
+          <section className="product-price-section">
+            <div className="price-request-card">
+              <h3 className="price-request-title">Цена по запросу</h3>
+              <p className="price-request-text">
+                Для получения актуальной цены и условий поставки свяжитесь с нами
+              </p>
+              <div className="price-request-contacts">
+                <a href="tel:+79244506430" className="contact-button">
+                  +7 (924) 450-64-30
+                </a>
+                <a href="mailto:info@ark-trade.ru" className="contact-button">
+                  info@ark-trade.ru
+                </a>
+              </div>
+            </div>
+          </section>
         </div>
 
         <div className="product-info-section">
@@ -129,24 +151,6 @@ const ProductDetail = ({ id }) => {
               </div>
             </section>
           )}
-
-          {/* Блок с ценой по запросу */}
-          <section className="product-price-section">
-            <div className="price-request-card">
-              <h3 className="price-request-title">Цена по запросу</h3>
-              <p className="price-request-text">
-                Для получения актуальной цены и условий поставки свяжитесь с нами
-              </p>
-              <div className="price-request-contacts">
-                <a href="tel:+79244506430" className="contact-button">
-                  +7 (924) 450-64-30
-                </a>
-                <a href="mailto:info@ark-trade.ru" className="contact-button">
-                  info@ark-trade.ru
-                </a>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
     </div>
